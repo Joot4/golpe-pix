@@ -13,6 +13,29 @@ const observer = new IntersectionObserver(
 
 revealElements.forEach((el) => observer.observe(el));
 
+const triageButton = document.querySelector("#triage-btn");
+const triageResult = document.querySelector("#triage-result");
+const triageInputs = document.querySelectorAll("#triage-list input[type='checkbox']");
+
+if (triageButton && triageResult && triageInputs.length) {
+  triageButton.addEventListener("click", () => {
+    const totalSelected = [...triageInputs].filter((input) => input.checked).length;
+
+    triageResult.classList.remove("good", "warn");
+
+    if (totalSelected >= 2) {
+      triageResult.textContent =
+        "Há sinais de tese jurídica razoável. O próximo passo é validar documentos e cronologia do caso.";
+      triageResult.classList.add("good");
+      return;
+    }
+
+    triageResult.textContent =
+      "Sem esses elementos, o risco jurídico tende a ser mais alto. Ainda assim, vale uma análise individual antes de descartar o caso.";
+    triageResult.classList.add("warn");
+  });
+}
+
 const testimonialSlider = document.querySelector("#testimonial-slider");
 if (testimonialSlider) {
   const track = testimonialSlider.querySelector(".testimonial-track");

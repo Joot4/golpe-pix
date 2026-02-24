@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="styles.css" />
@@ -46,20 +46,33 @@
 </head>
 <body>
   <header class="hero" id="topo">
-    <div class="hero-inner container">
-      <div class="hero-copy centered">
-        <h1>Caiu em golpe no Pix e o banco não resolveu?<br />Você pode ter direito à devolução do dinheiro.</h1>
-        <p class="subhead">
-          <strong>Análise jurídica gratuita</strong> para vítimas de golpe no Pix. Atuação direta contra o banco quando há
-          falha de segurança ou negativa indevida de estorno.
-        </p>
-      </div>
-      <div class="scroll-cue" aria-hidden="true">
-        <span>Nós podemos te ajudar</span>
-        <svg viewBox="0 0 24 24" role="presentation">
-          <path d="M12 4v13" />
-          <path d="m6 12 6 6 6-6" />
-        </svg>
+    <div class="hero-stage">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <h1>Caiu em golpe no Pix e o banco não resolveu?</h1>
+          <p class="hero-lead">Você pode ter direito à devolução do dinheiro.</p>
+          <p class="subhead">
+            Análise jurídica gratuita para vítimas de golpe no Pix, com atuação direta contra o banco em casos de falha de segurança ou negativa indevida de estorno.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/5598984648695?text=Me%20conta%20rapidamente%20como%20foi%20o%20golpe%20e%20quando%20aconteceu%3F" target="_blank" rel="noopener">
+            Falar com especialista
+          </a>
+          <div class="hero-dots" aria-hidden="true">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <figure class="hero-media" aria-hidden="true">
+          <img
+            class="hero-image"
+            src="hero-advogada.png"
+            alt=""
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
       </div>
     </div>
   </header>
@@ -76,44 +89,72 @@
     </section>
 
     <section class="process-section container reveal">
-      <h2>Explique o que aconteceu. Avaliamos seu caso com urgência e total sigilo.</h2>
+      <h2>Conte o que aconteceu. Fazemos uma avaliação inicial com urgência e total sigilo.</h2>
       <div class="process-grid">
         <article class="process-card">
-          <span class="process-icon">✍</span>
+          <span class="process-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20h4l10-10-4-4L4 16v4Z" />
+              <path d="m13 6 4 4" />
+            </svg>
+          </span>
           <h3>Avaliação inicial</h3>
         </article>
         <article class="process-card">
-          <span class="process-icon">🤝</span>
+          <span class="process-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 12l3 3 4-4 3 3" />
+              <path d="M3 10h4l2-2h3l2 2h7" />
+              <path d="M3 14h4l2 2h3l2-2h7" />
+            </svg>
+          </span>
           <h3>Atendimento humanizado</h3>
         </article>
         <article class="process-card">
-          <span class="process-icon">⚖</span>
+          <span class="process-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4v14" />
+              <path d="M6 8h12" />
+              <path d="M8 8 5 13h6L8 8Z" />
+              <path d="m16 8-3 5h6l-3-5Z" />
+              <path d="M8 20h8" />
+            </svg>
+          </span>
           <h3>Sem promessas, só estratégia</h3>
         </article>
       </div>
       <a class="btn btn-primary process-cta" href="https://wa.me/5598984648695?text=Me%20conta%20rapidamente%20como%20foi%20o%20golpe%20e%20quando%20aconteceu%3F" target="_blank" rel="noopener">
-        Fui vítima de golpe e preciso de ajuda agora
+        Quero uma avaliação inicial do meu caso
       </a>
     </section>
 
-    <section class="justice-section container reveal">
-      <div class="justice-grid">
-        <div class="justice-copy">
-          <h2>O que você pode exigir na Justiça</h2>
-          <ul class="justice-list">
-            <li>Devolução dos valores transferidos via Pix ou TED</li>
-            <li>Indenização por danos morais e danos materiais</li>
-            <li>Bloqueio e rastreio judicial da conta golpista</li>
-            <li>Ação com base no Código de Defesa do Consumidor e Súmula 479 do STJ</li>
-            <li>Responsabilização objetiva do banco (mesmo sem culpa direta)</li>
-            <li>Bancos são obrigados a manter segurança contra fraudes. Se falham nisso, podem ser condenados.</li>
-          </ul>
+    <section class="triage-section container reveal">
+      <div class="triage-box">
+        <h2>Avaliação rápida: veja se seu caso tem sinais de viabilidade</h2>
+        <p>Marque os pontos que aconteceram no seu caso:</p>
+        <div class="triage-list" id="triage-list">
+          <label><input type="checkbox" /> O banco falhou em bloquear valores</label>
+          <label><input type="checkbox" /> Houve comunicação imediata do golpe</label>
+          <label><input type="checkbox" /> A transação era atípica para seu perfil</label>
+          <label><input type="checkbox" /> O banco se omitiu após ser avisado</label>
+          <label><input type="checkbox" /> A conta de destino era suspeita</label>
         </div>
-        <div class="justice-visual" aria-hidden="true">
-          <div class="phone-frame">
-            <span>pix</span>
-          </div>
-        </div>
+        <button class="btn btn-outline" id="triage-btn" type="button">Verificar cenário do caso</button>
+        <p id="triage-result" class="triage-result">Sem promessa de resultado. A análise individual é indispensável.</p>
+      </div>
+    </section>
+
+    <section class="justice-section container reveal" id="justica">
+      <div class="justice-copy">
+        <h2>O que você pode exigir na Justiça</h2>
+        <ul class="justice-list">
+          <li>Devolução dos valores transferidos via Pix ou TED</li>
+          <li>Indenização por danos morais e danos materiais</li>
+          <li>Bloqueio e rastreio judicial da conta golpista</li>
+          <li>Ação com base no Código de Defesa do Consumidor e Súmula 479 do STJ</li>
+          <li>Responsabilização objetiva do banco (mesmo sem culpa direta)</li>
+          <li>Bancos são obrigados a manter segurança contra fraudes. Se falham nisso, podem ser condenados.</li>
+        </ul>
       </div>
     </section>
 
@@ -121,7 +162,15 @@
       <h2>Dúvidas Frequentes (FAQ)</h2>
       <div class="faq-ornament" aria-hidden="true">
         <span></span>
-        <b>⚖</b>
+        <b>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 4v14" />
+            <path d="M6 8h12" />
+            <path d="M8 8 5 13h6L8 8Z" />
+            <path d="m16 8-3 5h6l-3-5Z" />
+            <path d="M8 20h8" />
+          </svg>
+        </b>
         <span></span>
       </div>
       <div class="faq-accordion-list">
@@ -144,36 +193,35 @@
       </div>
     </section>
 
-    <section class="identity reveal">
-      <div class="container identity-grid">
-        <div>
-          <h2>Quem Sou</h2>
-          <p class="identity-intro">
-            Sou advogada com atuação em Direito do Consumidor, focada em fraudes bancárias digitais e responsabilização de instituições financeiras em casos de golpe no Pix.
+    <section class="about-full reveal" id="quem-sou">
+      <div class="about-shell">
+        <figure class="about-media" aria-hidden="true">
+          <img src="ca8daa4e-5c6a-4173-a9f2-4e2eb9734e3e.png" alt="" loading="lazy" decoding="async" />
+        </figure>
+        <div class="about-content">
+          <h2>Quem sou</h2>
+          <p class="about-subtitle">Advocacia estratégica em defesa do consumidor contra fraudes bancárias digitais.</p>
+          <p>
+            Atuo com foco em golpe no Pix, responsabilização de instituições financeiras e recuperação de prejuízos. Cada caso é
+            analisado com profundidade técnica e comunicação clara, sem promessas irreais.
           </p>
           <p>
-            Meu trabalho é transformar um problema confuso em um plano jurídico claro, com análise individual e orientação prática desde o primeiro contato.
+            Meu objetivo é transformar um cenário de incerteza em plano jurídico prático, com orientação segura desde o primeiro contato.
           </p>
           <ul class="identity-points">
-            <li>Análise técnica do caso e dos documentos</li>
-            <li>Estratégia jurídica objetiva, sem promessas irreais</li>
-            <li>Direcionamento sobre medidas extrajudiciais e judiciais</li>
-          </ul>
-        </div>
-        <div class="positioning-card">
-          <h3>Especializações e currículo</h3>
-          <p>Atuação voltada à defesa do consumidor diante de falhas de segurança e práticas abusivas de instituições financeiras.</p>
-          <ul>
             <li>Direito do Consumidor com ênfase em responsabilidade civil bancária</li>
-            <li>Atendimento estratégico em golpes digitais e fraudes via Pix</li>
-            <li>Análise de viabilidade para soluções extrajudiciais e judiciais</li>
-            <li>Atuação em pedidos de ressarcimento e indenizações por danos materiais e morais</li>
+            <li>Atendimento estratégico em fraudes digitais e Pix</li>
+            <li>Análise de viabilidade para medidas extrajudiciais e judiciais</li>
+            <li>Atuação em pedidos de ressarcimento e indenização</li>
           </ul>
+          <a class="btn btn-primary" href="https://wa.me/5598984648695?text=Me%20conta%20rapidamente%20como%20foi%20o%20golpe%20e%20quando%20aconteceu%3F" target="_blank" rel="noopener">
+            Quero falar sobre meu caso
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="social-proof container reveal">
+    <section class="social-proof container reveal" id="depoimentos">
       <h2>Quem conhece, recomenda</h2>
       <div class="testimonial-slider" id="testimonial-slider">
         <div class="testimonial-track">
