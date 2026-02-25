@@ -787,11 +787,17 @@ main section {
 }
 
 .about-subtitle {
-  margin: 0 0 0.58rem;
+  margin: 0 0 1.35rem;
+  padding-bottom: 0.65rem;
   font-size: clamp(0.92rem, 1.05vw, 1rem);
   font-weight: 600;
   color: #bfd3ea;
   line-height: 1.35;
+  border-bottom: 1px solid rgba(173, 205, 236, 0.24);
+}
+
+.about-subtitle + p {
+  margin-top: 0.55rem;
 }
 
 .identity-points {
@@ -1172,7 +1178,7 @@ cite {
   .hero-image {
     min-height: 300px;
     max-height: 360px;
-    object-position: 55% center;
+    object-position: 53% 90%;
   }
 
   .hero-media::after {
@@ -1212,6 +1218,10 @@ cite {
   .about-media {
     min-height: 140px;
     aspect-ratio: auto;
+  }
+
+  .about-media img {
+    object-position: 50% 30%;
   }
 
   .floating-whatsapp {
