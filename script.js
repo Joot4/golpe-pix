@@ -25,13 +25,13 @@ if (triageButton && triageResult && triageInputs.length) {
 
     if (totalSelected >= 2) {
       triageResult.textContent =
-        "Há sinais de tese jurídica razoável. O próximo passo é validar documentos e cronologia do caso.";
+        "Há indícios de que seu caso pode ter viabilidade jurídica. O próximo passo é analisar documentos e a sequência dos fatos.";
       triageResult.classList.add("good");
       return;
     }
 
     triageResult.textContent =
-      "Sem esses elementos, o risco jurídico tende a ser mais alto. Ainda assim, vale uma análise individual antes de descartar o caso.";
+      "Com poucos desses elementos, o risco jurídico tende a ser maior. Ainda assim, cada caso deve ser analisado individualmente antes de qualquer conclusão.";
     triageResult.classList.add("warn");
   });
 }
